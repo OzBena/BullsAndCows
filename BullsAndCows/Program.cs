@@ -26,12 +26,12 @@ namespace BullsAndCows
                 else
                 {
                     Console.WriteLine("Would you like to start a new game? <Y/N>");
-                    userInput = Console.ReadLine();
+                    userInput = Console.ReadLine().ToUpper();
 
                     while (userInput.CompareTo("N") != 0 && userInput.CompareTo("Y") != 0)
                     {
                         Console.WriteLine("input is invalid, type <Y/N>");
-                        userInput = Console.ReadLine();
+                        userInput = Console.ReadLine().ToUpper();
                     }
                     if (userInput.CompareTo("N") == 0)
                     {

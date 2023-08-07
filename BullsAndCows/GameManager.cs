@@ -46,7 +46,7 @@ namespace BullsAndCows
             {
                 m_board.printBoard();
                 Console.WriteLine("Please type your next guess <A B C D> or 'Q' to quit");
-                string guess = getValidNewGuess(Console.ReadLine().Replace(" ", string.Empty));
+                string guess = getValidNewGuess(Console.ReadLine().Replace(" ", string.Empty).ToUpper());
                if(m_userPressExit)
                 {
                     break;
@@ -123,7 +123,7 @@ namespace BullsAndCows
                     if (i_userInput.Distinct().Count() != i_userInput.Count())
                     {
                         Console.WriteLine("You cannot repeat letters, type new guess:");
-                        i_userInput = Console.ReadLine().Replace(" ", string.Empty);
+                        i_userInput = Console.ReadLine().Replace(" ", string.Empty.ToUpper());
                         userIputIsVaild = false;
                     }
                     else
@@ -133,7 +133,7 @@ namespace BullsAndCows
                             if (letter > 'H' || letter < 'A')
                             {
                                 Console.WriteLine("The letters should be between 'A' to 'H', type new guess:");
-                                i_userInput = Console.ReadLine().Replace(" ", string.Empty);
+                                i_userInput = Console.ReadLine().Replace(" ", string.Empty.ToUpper());
                                 userIputIsVaild = false;
                                 break;
                             }
@@ -143,7 +143,7 @@ namespace BullsAndCows
                 else
                 {
                     Console.WriteLine(string.Format("There need to be {0} letters in your guess, type new guess:", desiredSolutionLength));
-                    i_userInput = Console.ReadLine().Replace(" ", string.Empty);
+                    i_userInput = Console.ReadLine().Replace(" ", string.Empty.ToUpper());
                     userIputIsVaild = false;
                 }
             }
